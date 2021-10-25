@@ -1,6 +1,6 @@
 body {
 
-    background-color:pink;
+    background-color:silver;
     margin:0;
     font-family:Arial,Verdana,sans-serif;
     font-size:18px;
@@ -14,7 +14,7 @@ body {
     font-size:18px;
     padding:10px;
     margin:auto;
-    box-shadow: 10px 10px 2000px orange;
+    box-shadow: 10px 10px 200px red;
     position:relative;
 
 }
@@ -35,7 +35,7 @@ body {
     margin:20px;
     border:1px black;
 }
-.btn{
+.btn {
 
     float:right;
     width:100px;
@@ -52,16 +52,50 @@ body {
    position:relative;
     
 }
-.content{
+.content {
+position:relative;
+font-size:34px;
+font-weight:bold;
+text-align:center
 
-    margin:125px 0;
-    position:absolute;
-    width:500px;
-    height:200px;
 }
-.back{
+.spacer {
+
+    position:relative;
+    border: 1px solid black;
+    margin-bottom: 80px;
+    padding:10px;
+    width:47%;
+    float:left;
+    background-color:red;
+    box-shadow: 10px 10px 10px 10px black;
+ }
+ .test {
+    position:relative;
+    margin-left:50%;
+    margin-bottom: 80px;
+    padding:10px;
+    border: 1px solid black;
+    margin-top:46px;
+    background-color:red;
+    box-shadow: 10px 10px 10px 10px black;
+  
+}
+.image{
+    position: relative;
+    
+}
+
+
+ .back {
 
     position:absolute;
     left:0;
-    bottom:-800px;
+    bottom:-25px;
+}
+
+.footer{
+
+    position:relative;
+    
 }
