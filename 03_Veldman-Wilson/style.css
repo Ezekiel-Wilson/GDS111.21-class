@@ -79,7 +79,18 @@ text-align:center
     margin-top:46px;
     background-color:red;
     box-shadow: 10px 10px 10px 10px black;
+    
   
+}
+.h2 {
+    position:relative;
+    margin-left:50%;
+    margin-bottom: 80px;
+    padding:10px;
+    border: 1px solid black;
+    margin-top:46px;
+    background-color:red;
+    box-shadow: 10px 10px 10px 10px black;
 }
 .image{
     position: relative;
@@ -99,3 +110,12 @@ text-align:center
     position:relative;
     
 }
+#nav-bar {
+
+    position:absolute;
+    width: 303px;
+    height:40px;
+    margin:20px;
+    border:1px black;
+}
+
