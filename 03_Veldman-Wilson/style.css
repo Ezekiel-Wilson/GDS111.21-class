@@ -119,3 +119,24 @@ text-align:center
     border:1px black;
 }
 
+.btn:hover {
+
+    background-color:black;
+    background-image:url(images/btn.jpg);
+    text-shadow:2px 2px 6px;
+
+}
+.question-text {
+    border:1px solid black;
+    width:980px;
+    margin:auto;
+    border-radius:15px;
+    
+    margin-bottom:15px;
+}
+.get {
+    width:250px;
+    margin:auto;
+    margin-bottom:10px;
+    background-color:red;
+}

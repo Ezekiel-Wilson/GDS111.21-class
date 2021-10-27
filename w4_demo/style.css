@@ -1,0 +1,32 @@
+/*SKELETON STRUCTURE-------------------------------------------------------*/
+/*BACKGROUND------applies to all content unless id/class/element styles differently*/
+body { 
+    background-image:url(images/background.png);
+    background-color:#dddddd;
+}
+
+div {
+
+    border : 1px solid black;
+    padding:10px;
+    margin-bottom:10px;
+    border-radius:20px; /*rounds corners of block level elements*/
+    background-color: aqua;
+    
+}
+
+#wrapper {
+    width:1000px;
+    margin:auto;
+    box-shadow:5px 5px 5px black;
+    border-radius:20px; /*rounds corners of block level elements*/
+
+}
+
+
+/*HEADER--------*/
+/*NAV-----------*/
+/*CONTENT--------*/
+/*FOOTER---------*/
+/*PAGE SPECIFIC-------*/
+

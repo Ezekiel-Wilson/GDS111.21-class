@@ -5,9 +5,11 @@ var store4="The letter “R.”"
 var store5="All the people were married."
 var store6="Bookkeeper"
 var store7="She took a picture of him and developed it in her darkroom."
+var store8="Pencil lead."
+var store9="Four sisters and three brothers."
+var store10="Silence"
 
 function answer1() {
-
 
     document.getElementById("question1").innerHTML = store1;
 }
@@ -35,3 +37,18 @@ function answer7(){
 
     document.getElementById("question7").innerHTML = store7;
 }
+function answer8(){
+
+    document.getElementById("question8").innerHTML = store8;
+}
+
+function answer9(){
+
+    document.getElementById("question9").innerHTML = store9;
+}
+
+function answer10(){
+
+    document.getElementById("question10").innerHTML = store10;
+}
+
