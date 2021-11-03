@@ -2,18 +2,87 @@
 
     width:980px;
     margin:auto;
+    background-color:purple;
 
 }
 div {
-border:1px solid crimson;
+
+padding:50px;
 
 }
 
 .play-program{
     width:200px;
     height:100px;
-    border:1px red;
+    
 }
 footer{
     text-align:center;
+}
+.btn {
+
+    margin:auto;
+    
+    height:100px;
+    width:200px;
+    background-color:red;
+    font-size:42px;
+    text-align:center;
+}
+footer {
+
+    margin-top:400px;
+}
+h1{
+    text-align:center;
+    color:red;
+    font-size:36px;
+}
+#target {
+    
+    float:right 
+}
+.shoot {
+width:200px;
+height:200px;
+background-color:salmon;
+float:left;
+border: 10px solid black;
+margin-top:285px;
+position:relative;
+}
+
+.reload{
+    width:200px;
+    background-color:rebeccapurple;
+    float:left;
+    height:200px;
+    border: 10px solid black;
+    margin-top:285px;
+    position:absolute;
+   
+}
+#total-ammo {
+    width:85px;
+    background-color:red;
+    float:right;
+    height:85px;
+    border: 10px solid black;
+    margin-top:352px;
+    margin-left:790px;
+    position:absolute;
+    text-align:center;
+
+}
+#current-ammo {
+    width:85px;
+    background-color:pink;
+    float:right;
+    height:85px;
+    border: 10px solid black;
+    margin-top:351px;
+    margin-left:600px;
+    position:absolute;
+    text-align:center;
+
 }

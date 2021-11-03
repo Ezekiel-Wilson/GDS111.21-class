@@ -7,23 +7,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JS Operators Demo</title>
     <!--Link to Js-->
-    <script type="text/javascript" src="demo.js"></script>
-    <link rel="stylesheet" type="text/css" href="style.cs" />
+    <script type="text/javascript" src="gun.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css" />
 </head>
 
 <body onload="updatescreen();">
 
     <div id="wrapper">
+        
 
         <header>
             <!--could use heading:below or impress KT with a custom graphic!-->
             <h1>Six Shooter</h1>
             <!-- (but you will need some sort of image below this h1 for the heading on your assignment)-->
+            
         </header>
+
 
         <!--div box that holds the targets image (make your own or pull one from online)-->
         <div id="target">
-            <img src="images/?.jpg/.png" alt="" />
+            <img src="images/biglion.jpg" alt="target" />
         </div>
         <!--nav box that holds info and buttons for game!-->
         <nav>
@@ -43,24 +46,19 @@
 
                 <form>
 
-                    <p class="btn">
+                    <p class="btns">
                         <input type="button" value="SHOOT" class="shoot" onclick="shoot();" />
                     </p>
 
 
-                    <p class="btn">
+                    <p class="btns">
                         <input type="button" value="RELOAD" class="reload" onclick="reload();" />
                     </p>
                 </form>
 
             </div><!--#right-->
             <div id="left">
-                <form>
-
-                    <p class="btn">
-                        <input type="button" value="Play" class="play-program" onclick="location.href=index.html();" />
-                    </p>
-                    </form>
+               
 
             </div>
             
@@ -75,6 +73,12 @@
     </div>
     <!--#wrapper-->
     <!--HTML 5 AUDIO PLAYERS GO BELOW THIS LINE BUT INSIDE OF THE BODY! [ yes, sound :D]-->
+    <audio id="gun" src="sounds/shot1s.mp3">
+        <p> Your browser sucks and doesnt know HTML5</p>
+    </audio>
+    <audio id="reload" src="sounds/reload.mp3">
+        <p> Your browser sucks and doesnt know HTML5</p>
+    </audio>
 </body>
 
 </html>
