@@ -98,5 +98,5 @@ function play(id) {
             }
             break
 
-    }//end switch statement
+        }//end switch statement
 }
