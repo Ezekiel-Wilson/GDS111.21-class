@@ -17,6 +17,19 @@ pics2[0] = "images/rock2.jpg"
 pics2[1] = "images/paper2.jpg"
 pics2[2] = "images/scissors2.jpg"
 
+//create an array holding the button element
+//document.querySelectorAll grabs all of one element type
+var btn = document.querySelectorAll('button')
+
+//check your stored data in the console!
+console.log(btn) //used for testing requires the dev tools to be open
+
+//make the buttons clickable and runable for the game
+//add event listeneres to each button
+btn[0].addEventListener('click', function (e) {play(0) })
+btn[1].addEventListener('click', function (e) {play(1) })
+btn[2].addEventListener('click', function (e) {play(2) })
+
 //array thats store the player and computer options ( one array for each)
 //Player Id - pId
 var pId = new Array("rock_p", "paper_p", "scissors_p")
@@ -35,6 +48,8 @@ function swap(id, image){
 function play(id) {
 
     //setting up the stored image paths in JS to match the HTML
+    //swap() Calls the function this gets it code to run!
+    // values supplied inside of the are passed into the perameter variables
     swap(pId[0], pics[0])
     swap(pId[1], pics[1])
     swap(pId[2], pics[2])
@@ -62,9 +77,12 @@ function play(id) {
         if (c_choice == 0) {
 
             alert ("Bloody hell lets call it a DRAW!")
+            //callShowresults() and pass correct values for pchoice c choice and results
+            showResults("Rock!","Rock!","It's a Draw")
         }
         else if (c_choice == 1) {
             alert("You LOSE to the computer!")
+            showResults("Rock!","Paper!","You Suck")
         }
         else{
 
@@ -76,27 +94,44 @@ function play(id) {
             if (c_choice == 1) {
     
                 alert ("Bloody hell lets call it a DRAW!")
+                showResults("Paper","Paper", "You Suck")
             }
             else if (c_choice == 2){
                 alert("You LOSE to the computer!")}
             else  {
     
                 alert("YOU WIN but stil lost cuz ur bad")
+                showResults("paper","scissors", "You Suck")
+        
             }
+           
             break
         //scissors
         case 2:
             if (c_choice == 2) {
     
                 alert ("Bloody hell lets call it a DRAW!")
+                showResults("Scissors","Scissors","Its a draw")
             }
             else if (c_choice == 0){
                 alert("You LOSE to the computer!")}
             else  {
     
                 alert("YOU WIN but stil lost cuz ur bad")
+                showResults("scissors","paper","You Win")
             }
             break
 
         }//end switch statement
+
+
+}
+//funtion that writes the results back to the HTML page
+function showResults(pChoice, cChoice, results) {
+
+    document.getElementById("pChoice").innterHTML = pChoice
+    document.getElementById("cChoice").innterHTML = cChoice
+    document.getElementById("results").innterHTML = results
+
+
 }

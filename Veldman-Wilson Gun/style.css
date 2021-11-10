@@ -5,11 +5,14 @@
     background-color:purple;
     border:10px solid black;
     height:1000px;
+
    
 }
 div {
 
-padding:50px;
+padding: 60px;
+border:5px black;
+
 
 }
 
