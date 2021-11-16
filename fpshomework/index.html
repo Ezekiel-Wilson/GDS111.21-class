@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>coke dr pep</title>
+    <meta name="author" content="Jay Aguiar">
+    <!--<link rel="stylesheet" href="style.css">-->
+</head>
+<body>
+    <div id="container">
+
+        <h2>Player</h2>
+        <div class="player">
+
+            <!-- p -= player !-->
+            <img src="images/coke.jpg" id="coke_p" onclick="play(0);"/>
+            <img src="images/dr.jpg" id="dr_p" onclick="play(1);"/>
+            <img src="images/pep.jpg" id="pep_p" onclick="play(2);"/>
+
+        </div>
+
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+
+        
+        <h2> Computer </h2>
+        <div class="computer">
+
+            <!-- c = computer!-->
+            <img src="images/coke.jpg" id="coke_c"/>
+            <img src="images/dr.jpg" id="dr_c" />
+            <img src="images/pep.jpg" id="pep_c" />
+
+        </div>
+        <nav>
+            <button id="coke">coke</button>
+             <button id="dr">dr</button>
+              <button id="pep">pep</button>
+        </nav>
+        <div id="result">
+            <p>PLAYER CHOSE: <span id="pChoice"></span></p>
+            <p>COMPUTER CHOSE: <span id="cChoice"></span></p>
+            <br>
+            <p>GAME OUTCOME: <span id="results"></span></p>
+        </div>
+    </div>
+    <script src="rps.js"></script>
+</body>
+</html>

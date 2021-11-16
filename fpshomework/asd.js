@@ -1,21 +1,16 @@
-//RPS part 1 javascript W6D1 class
-
-//create an Array that will store the images being used
-//ARRAY: Its just like a variable so its a data storage device but it can contain more than one value
-
 var pics = new Array() //creates empty Array
 
 //assign values to array population
 //[ denotes index ] its like a house number, and array is the street name; array name index gives access to the indiv value
-pics[0] = "images/rock.jpg"
-pics[1] = "images/paper.jpg"
-pics[2] = "images/scissors.jpg"
+pics[0] = "images/coke.jpg"
+pics[1] = "images/dr.jpg"
+pics[2] = "images/pep.jpg"
 
 var pics2 = new Array()
 
-pics2[0] = "images/rock2.jpg"
-pics2[1] = "images/paper2.jpg"
-pics2[2] = "images/scissors2.jpg"
+pics2[0] = "images/coke2.jpg"
+pics2[1] = "images/dr2.jpg"
+pics2[2] = "images/pep2.jpg"
 
 //create an array holding the button element
 //document.querySelectorAll grabs all of one element type
@@ -32,10 +27,10 @@ btn[2].addEventListener('click', function (e) {play(2) })
 
 //array thats store the player and computer options ( one array for each)
 //Player Id - pId
-var pId = new Array("rock_p", "paper_p", "scissors_p")
-//pId[1] = "paper_p"
+var pId = new Array("coke_p", "dr_p", "pep_p")
+//pId[1] = "dr_p"
 //Computer ID - cId
-var cId = new Array("rock_c" ,"paper_c" ,"scissors_c")
+var cId = new Array("coke_c" ,"dr_c" ,"pep_c")
 //create a function that will swap the regular images the highlighted ones (series 2 pics)
 function swap(id, image){
 
@@ -72,53 +67,53 @@ function play(id) {
 
     switch(p_choice) {
         //cases need to be built for ever option p_choice can be!
-        //Rock
+        //coke
         case 0://case for when p_choice == 0 
         if (c_choice == 0) {
 
-            alert ("Bloody hell lets call it a DRAW!")
+            alert ("test")
             //callShowresults() and pass correct values for pchoice c choice and results
-            showResults("Rock!","Rock!","It's a Draw")
+            showResults("coke!","coke!","It's a Draw")
         }
         else if (c_choice == 1) {
             alert("You LOSE to the computer!")
-            showResults("Rock!","Paper!","You Suck")
+            showResults("coke!","dr!","You Suck")
         }
         else{
 
             alert("YOU WIN but stil lost cuz ur bad")
         }
-        //paper
+        //dr
         break
         case 1:
             if (c_choice == 1) {
     
-                alert ("Bloody hell lets call it a DRAW!")
-                showResults("Paper","Paper", "You Suck")
+                alert ("test")
+                showResults("dr","dr", "You Suck")
             }
             else if (c_choice == 2){
                 alert("You LOSE to the computer!")}
             else  {
     
                 alert("YOU WIN but stil lost cuz ur bad")
-                showResults("paper","scissors", "You Suck")
+                showResults("dr","pep", "You Suck")
         
             }
            
             break
-        //scissors
+        //pep
         case 2:
             if (c_choice == 2) {
     
                 alert ("Bloody hell lets call it a DRAW!")
-                showResults("Scissors","Scissors","Its a draw")
+                showResults("pep","pep","Its a draw")
             }
             else if (c_choice == 0){
                 alert("You LOSE to the computer!")}
             else  {
     
                 alert("YOU WIN but stil lost cuz ur bad")
-                showResults("scissors","paper","You Win")
+                showResults("pep","dr","You Win")
             }
             break
 
@@ -127,7 +122,6 @@ function play(id) {
 
 }
 //funtion that writes the results back to the HTML page
-
 function showResults(pChoice, cChoice, results) {
 
     document.getElementById("pChoice").innerHTML = pChoice
