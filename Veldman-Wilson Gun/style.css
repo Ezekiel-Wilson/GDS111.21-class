@@ -5,11 +5,15 @@
     background-color:purple;
     border:10px solid black;
     height:1000px;
+    border-radius:20px;
+    box-shadow:10px 10px 10px solid black;
    
 }
 div {
 
 padding:50px;
+
+
 
 }
 
@@ -55,7 +59,8 @@ h1{
     border : 1px solid black;
     padding:50px;
     margin-bottom:10px;
-    border: radius 200px
+    border: radius 200px;
+    
   
 }
 .shoot {
@@ -67,6 +72,7 @@ border: 10px solid black;
 margin-top:285px;
 position:relative;
 border:10px solid black;
+
 
 }
 
@@ -110,5 +116,6 @@ border:10px solid black;
     height:700px;
     border:5px solid black;
     height:1000px;
+   
     
 }
