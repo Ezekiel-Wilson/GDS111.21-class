@@ -71,7 +71,7 @@ function play(id) {
         case 0://case for when p_choice == 0 
         if (c_choice == 0) {
 
-            alert ("test")
+            alert ("Guess there both good")
             //callShowresults() and pass correct values for pchoice c choice and results
             showResults("coke!","coke!","It's a Draw")
         }
@@ -88,7 +88,7 @@ function play(id) {
         case 1:
             if (c_choice == 1) {
     
-                alert ("test")
+                alert ("Guess there both good")
                 showResults("dr","dr", "You Suck")
             }
             else if (c_choice == 2){
