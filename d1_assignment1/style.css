@@ -11,3 +11,8 @@ canvas{
     border:1px solid black;
     background-image:url(images/shapes.png);
 }
+#image {
+    height:800px;
+    width: 1100px;
+
+}
