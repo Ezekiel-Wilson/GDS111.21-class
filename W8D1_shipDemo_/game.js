@@ -67,12 +67,34 @@ function animate() {
     //move and redraw the ship .functions() are from ship.js [Ship()]
     ship.move()
     ship.draw()
-
+    //if ship leaves right edge of canvas returns ta left edge
     if(ship.x > canvas.width() + 25) {
         //if the currnet ship x cord is greated than beyond the canvas width + 25 size of the ship 
 
         //move ship x coord
 
         ship.x = -25
+    }
+    //if ship leaves right edge of canvas returns ta left edge
+    if(ship.y > canvas.height() + 25) {
+        //if the currnet ship y cord is greated than beyond the canvas width + 25 size of the ship 
+
+        //move ship y coord
+
+        ship.y = -25
+    }
+    if(ship.x < -25) {
+        //if the currnet ship x cord is greated than beyond the canvas width + 25 size of the ship 
+
+        //move ship x coord
+
+        ship.x = 825
+    }
+    if(ship.y <-25) {
+        //if the currnet ship x cord is greated than beyond the canvas width + 25 size of the ship 
+
+        //move ship x coord
+
+        ship.y = 825
     }
 }
