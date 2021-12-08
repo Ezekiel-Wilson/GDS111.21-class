@@ -28,7 +28,7 @@ function Asteroid() {
     this.y = randomRange(c.height - this.radius, 0 + this,radius) - c. height
     this.vx = randomRange(-5, -10) // horizontal velocity
     this.vy = randomRange(10, 5) // vertical velocity
-    this.color = "white"
+    this.color = "red"; 
 
     this.draw = function () {//draw the asteroid to the canvas! (its just a sphere!)
         context.save()
