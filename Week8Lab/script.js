@@ -12,6 +12,13 @@ var gameStates = []
 var currentState = 0
 var ship
 
+//IMAGE SPRITES FOR GAME
+var shipSprite = new Image()
+shipSprite.src = "images/ship.png"
+shipSprite.onload = function(){}
+
+
+
 
 function randomRange(high, low){
     return Math.random() * (high-low) + low;
@@ -20,8 +27,8 @@ function randomRange(high, low){
 //Class for the Asteroids
 function Asteroid(){
     this.radius = randomRange(2,10);
-    this.x = randomRange(c.width - this.radius, 0 + this.radius);
-    this.y = randomRange(c.height - this.radius, 0 + this.radius) - c.height;
+    this.x = randomRange(c.width - this.radius, 0 + this.radius) + c.width;
+    this.y = randomRange(c.height - this.radius, 0 + this.radius);
     this.vx = randomRange(-5, -10);
     this.vy = randomRange(10,5);
     this.color = "red";
@@ -82,7 +89,9 @@ function PlayerShip(){
             context.fill();
             context.restore();
         }
-        context.beginPath();
+
+        context.fillStyle = "red" 
+        /*context.beginPath();
         
         context.fillStyle = "red";
         context.moveTo(0, -13);
@@ -92,7 +101,11 @@ function PlayerShip(){
         context.closePath();
         context.fill();
 
-        context.restore();
+        /*if(invincible) {.... do somethingsssss} :D */
+        //context.restore();
+        context.drawImage(shipSprite, -20,-20,40,40)
+        console.log("shipSprite drawImage()")
+        context.restore()
     }
 
     this.move = function(){
@@ -134,11 +147,14 @@ function keyPressDown(e){
     if(e.keyCode === 38){
         ship.up = true;
     }
-    if(e.keyCode === 37){
+    if(e.keyCode === 40){
         ship.left = true;
     }
     if(e.keyCode === 39){
         ship.right = true;
+    }
+    if(e.keyCode === 40) {
+        ship.down = true;
     }
     
 }
@@ -151,7 +167,7 @@ function keyPressUp(e){
         if(e.keyCode === 38){
         ship.up = false;
         }
-        if(e.keyCode === 37){
+        if(e.keyCode === 40){
             ship.left = false;
         }
         if(e.keyCode === 39){
@@ -209,20 +225,20 @@ gameStates[1] = function() {//GAMEPLAY STATE
     ship.vy += gravity;
 
     if(ship.up == true){
-        ship.vy = -10;
+        ship.vy = -8;
     }
     else{
-        ship.vy = 3;
+        ship.vy = 0;
     }
 
     if(ship.left == true){
-        ship.vx = -3;
+        ship.vy = 8;
     }
     else if(ship.right == true){
-        ship.vx = 3;
+        ship.vx = 4;
     }
     else{
-        ship.vx = 0;
+        ship.vx = -3;
     }
 
     for(var i = 0; i<asteroids.length; i++){
@@ -248,7 +264,7 @@ gameStates[1] = function() {//GAMEPLAY STATE
             asteroids[i].x = randomRange(c.width - asteroids[i].radius, 0 + asteroids[i].radius);
         }
         if(gameOver == false){
-            asteroids[i].y += asteroids[i].vy;
+            asteroids[i].x += asteroids[i].vx;
         }
         asteroids[i].draw();
     }
@@ -290,8 +306,8 @@ function scoreTimer(){
     if(gameOver == false){
         score++;
         //console.log(score);
-        if(score % 5 == 0){
-            numAsteroids += 5;
+        if(score % 2 == 0){
+            numAsteroids += 10;
             console.log(numAsteroids);
         }
 
