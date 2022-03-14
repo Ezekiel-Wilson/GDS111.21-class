@@ -1,6 +1,6 @@
 var buttonData ={
 	info:{
-		src:`images/animate.png`
+		src:`images/start.png`
 	},
 	states:{
 		//The idle animation 
@@ -10,7 +10,7 @@ var buttonData ={
 			cycle:true,
 			frames:
 			[
-				{width:64, height:64, startX:0, startY:0}	
+				{width:421, height:168, startX:0, startY:0}	
 			]
 		},
 		//The walwidth:128, height:128,
@@ -20,10 +20,12 @@ var buttonData ={
 			cycle:false,
 			frames:
 			[
-				{width:64, height:64, startX:1600, startY:0}
+				{width:421, height:168, startX:128, startY:0}
             ]							
 			
 		}
+	
+		
 	}
 		
 }

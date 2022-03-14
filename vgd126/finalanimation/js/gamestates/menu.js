@@ -2,15 +2,11 @@
 This file contains all of the code for the Main Menu
 ----------------------------------*/
 
-var startButton = new GameObject().makeSprite(buttonData);
-//startButton.img.src="images/mrt.jpg"
-startButton.width=200;
-startButton.hitBoxWidth=800
-console.log(startButton.collisionPoints.right)
+var startButton = new GameObject({width:421, height:168}).makeSprite(buttonData)
 
 
 var menuBackground = new GameObject();
-menuBackground.img.src = "images/mrt.jpg"
+menuBackground.img.src = "images/weedmannostart.png"
 menuBackground.width=canvas.width
 menuBackground.height=canvas.height
 
@@ -23,20 +19,25 @@ gameStates[`menu`] =function(){
 		{
 			//Changes to the game state
 			gameStates.changeState(`level1`)
-			sounds.play('music')
+			sounds.play(`music`)
 		}
 
 		//Hover Effect Graffic
-		startButton.color = `yellow`
+		startButton.changeState(`hover`)
+		canvas.style.curson=`pointer`;
+		
+			
 	}
 	else
 	{
 		//Default Button Graphic
-		startButton.color = `red`
+		startButton.changeState(`idle`)
+		
 	}
 	
+	
 	menuBackground.drawStaticImage();
-	startButton.render()
+	startButton.drawSprite()
 }
 	
 	
