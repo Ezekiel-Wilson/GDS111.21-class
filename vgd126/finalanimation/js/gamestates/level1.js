@@ -12,13 +12,16 @@ wiz.force=1
 
 //Very back background
 var sky = new GameObject({width:canvas.width, height:canvas.height, color:"cyan"})
+sky.img.src=`images/bg12.png`
+
 
 //The ground
 var ground = new GameObject({width:canvas.width*10, height:64,y:canvas.height-32, color:"green"})
+ground.img.src = `images/ground.png`
 
 //A platform
-var plat = new GameObject({width:256, height:64,y:canvas.height-200, color:"green"})
-
+var plat = new GameObject({width:256, height:64,y:canvas.height-200, color:"transparent"})
+plat.img.src=`images/hoverboard.png`
 //A level object when it is moved other objects move with it.
 var level = new GameObject({x:0,y:0});
 ground.world = level;
@@ -59,14 +62,14 @@ levelItems.add([caveBack.grid, ground, plat, cave.grid]);
 
 //background
 var bg = new GameObject({x:level.x,y:level.y, width:canvas.width*4, height:canvas.height})
-bg.img.src=`images/bgfull.png`
+bg.img.src=`images/eeee.png`
 
 var clouds = new GameObject({x:level.x,y:level.y})
 clouds.img.src=`images/mrt.jpg`
 
 //farbackground
-var rbg = new GameObject({x:level.x, y:level.y, width:1024, height:512})
-rbg.img.src=`images/hills.png`
+var rbg = new GameObject({x:level.x, y:level.y, width:4096, height:512})
+rbg.img.src=`images/bg12.png`
 
 /*------------------vvBULLET STUFFvv----------------------*/
 
@@ -139,6 +142,7 @@ gameStates[`level1`] = function()
 		wiz.vy = wiz.jumpHeight;
 		wiz.changeState(`jump`)
 		sounds.play(`jump`,1)
+		
 	}
 	shotTimer--;
 	if(shotTimer <=0)
@@ -246,7 +250,7 @@ gameStates[`level1`] = function()
 
 	sky.render()
 	
-	var pattern = context.createPattern(clouds.img, `repeat`);
+	var pattern = context.createPattern(ground.img, `repeat`);
 	ground.color = pattern
 
 	rbg.drawStaticImage([0,0]);
@@ -254,10 +258,14 @@ gameStates[`level1`] = function()
 	rbg.drawStaticImage([rbg.width,0]);
 	bg.drawStaticImage([0,0]);
 	
+
+	
 	
 	//rbg.render(`drawStaticImage`, [0,0])
 
-	rects.render(`drawRect`)
+	rects.render()
+	plat.drawStaticImage([plat.width/-2,-plat.height/2-22]);
+	
 	
 
 	/*context.beginPath()
