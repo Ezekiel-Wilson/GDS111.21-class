@@ -10,7 +10,7 @@ var buttonData ={
 			cycle:true,
 			frames:
 			[
-				{width:421, height:168, startX:0, startY:0}	
+				{width:128, height:168, startX:0, startY:0}	
 			]
 		},
 		//The walwidth:128, height:128,
@@ -20,7 +20,7 @@ var buttonData ={
 			cycle:false,
 			frames:
 			[
-				{width:421, height:168, startX:128, startY:0}
+				{width:128, height:128, startX:128, startY:0}
             ]							
 			
 		}
