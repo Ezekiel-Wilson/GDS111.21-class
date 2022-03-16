@@ -1,6 +1,6 @@
 var buttonData ={
 	info:{
-		src:`images/startspr.png`
+		src:`images/Startspr.png`
 	},
 	states:{
 		//The idle animation 
