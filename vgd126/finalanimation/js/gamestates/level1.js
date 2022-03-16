@@ -79,13 +79,14 @@ var shotTimer = 0;
 var shotDelay = 21;
 var currentBullet = 0;
 
+
 for(let i=0; i<100; i++)
 {
-	bullets[i] = new GameObject({width:64, height:64})
-	//bullets[i].img.src="images/mrt.jpg"
-	bullets[i].makeSprite(playerData)
+	bullets[i] = new GameObject({width:32, height:32})
+	bullets[i].img.src="images/attack.png"
+	//bullets[i].makeSprite(playerData)
 	bullets[i].y=-10000
-	bullets[i].changeState(`walk`)
+	//bullets[i].changeState(`walk`)
 }
 
 //console.log(bullets)
@@ -141,7 +142,7 @@ gameStates[`level1`] = function()
 		wiz.canJump = false;
 		wiz.vy = wiz.jumpHeight;
 		wiz.changeState(`jump`)
-		sounds.play(`jump`,1)
+		sounds.jump.volume=1
 		
 	}
 	shotTimer--;
@@ -164,11 +165,12 @@ gameStates[`level1`] = function()
 
 			bullets[currentBullet].vx = 5*wiz.dir;
 			bullets[currentBullet].world = level;
-			bullets[currentBullet].x = wiz.x-level.x + (wiz.dir * 96) ;
-			bullets[currentBullet].y = wiz.y + 20;
+			bullets[currentBullet].x = wiz.x-level.x + (wiz.dir * 30) ;
+			bullets[currentBullet].y = wiz.y - 50;
 			bullets[currentBullet].dir = wiz.dir;
 			
 			sounds.play(`attacks`);
+			sounds.attacks.volume=.5
 
 			currentBullet++;
 			if(currentBullet>=bullets.length)
@@ -278,9 +280,9 @@ gameStates[`level1`] = function()
 	
 	for(let i=0; i<bullets.length; i++)
 	{
-		if(bullets[i].overlap(stage)) bullets[i].vy+=1;
+		//if(bullets[i].overlap(stage)) bullets[i].vy+=1;
 		bullets[i].move()
-		bullets[i].play(function(){return}).drawSprite()
+		bullets[i].drawStaticImage()
 		//bullets[i].angle+=10
 		while(g1.collide(bullets[i].bottom) && bullets[i].vy>=0)
 		{

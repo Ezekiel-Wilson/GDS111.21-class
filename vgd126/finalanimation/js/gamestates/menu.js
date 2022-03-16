@@ -20,24 +20,26 @@ gameStates[`menu`] =function(){
 			//Changes to the game state
 			gameStates.changeState(`level1`)
 			sounds.play(`music`)
+			sounds.music.volume=.4
 		}
 
 		//Hover Effect Graffic
 		startButton.changeState(`hover`)
-		canvas.style.curson=`pointer`;
+		canvas.style.cursor=`pointer`;
 		
 			
-	}
+	} 	
 	else
 	{
 		//Default Button Graphic
 		startButton.changeState(`idle`)
 		
+		
 	}
 	
 	
 	menuBackground.drawStaticImage();
-	startButton.drawSprite()
+	startButton.play().drawSprite()
 }
 	
 	
