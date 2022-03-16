@@ -11,12 +11,12 @@ var wiz = new GameObject({width:128, height:128, spriteData:playerData}).makeSpr
 wiz.force=1
 
 //Very back background
-var sky = new GameObject({width:canvas.width, height:canvas.height, color:"cyan"})
-sky.img.src=`images/bg12.png`
+var sky = new GameObject({width:canvas.width, height:canvas.height, color:"transparent"})
+sky.img.src=`images/bg122.png`
 
 
 //The ground
-var ground = new GameObject({width:canvas.width*10, height:64,y:canvas.height-32, color:"green"})
+var ground = new GameObject({width:canvas.width*10, height:64,y:canvas.height-32, color:"transparent"})
 ground.img.src = `images/ground.png`
 
 //A platform
@@ -68,8 +68,8 @@ var clouds = new GameObject({x:level.x,y:level.y})
 clouds.img.src=`images/mrt.jpg`
 
 //farbackground
-var rbg = new GameObject({x:level.x, y:level.y, width:4096, height:512})
-rbg.img.src=`images/bg12.png`
+var rbg = new GameObject({x:level.x, y:level.y, width:1020, height:512, color:"transparent"})
+rbg.img.src=`images/secondarybackground.png`
 
 /*------------------vvBULLET STUFFvv----------------------*/
 
@@ -250,7 +250,7 @@ gameStates[`level1`] = function()
 		rbg.x=0; 
 	}
 
-	sky.render()
+	sky.drawStaticImage()
 	
 	var pattern = context.createPattern(ground.img, `repeat`);
 	ground.color = pattern
