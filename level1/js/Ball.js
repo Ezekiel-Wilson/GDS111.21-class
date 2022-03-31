@@ -14,7 +14,7 @@ function Ball()
 	this.vy = 0;
 	
 	//player's color
-	this.color = "Red";
+	this.color = "red";
 
 	this.force= 1;
 	
@@ -22,13 +22,14 @@ function Ball()
 	
 	this.drawCircle = function()
 	{
-	
+		context.save();
 		context.fillStyle = this.color;
+		context.translate(this.x,this.y);
 		context.beginPath();
-		context.arc(this.x,this.y,this.width/2,0,360*Math.PI/180,true)
+		context.arc(0,0,this.width/2,0,360*Math.PI/180,true)
 		context.closePath();
-		context.restore();
 		context.fill();
+		context.restore();
 		
 		
 	}	
