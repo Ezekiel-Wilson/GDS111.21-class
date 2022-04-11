@@ -4,6 +4,11 @@ var timer;
 var interval = 1000/60;
 var player1;
 var ball;
+var prevY;
+var prevX;
+var playerY;
+
+
 
 
 
@@ -16,14 +21,14 @@ var ball;
 	//Instantiate the Player
 	
 	var player1 = new GameObject();
-	player1.x = 100;
+	player1.x = 0;
 	player1.width = 40;
 	player1.height = 120;
 	ball = new GameObject();
 	
 	//------Declare the Player's speed on the x and y axis------
 	ball.vx =15;
-	ball.vy = 15;	
+	ball.vy = 0;	
 	
 	//Set the Animation Timer
 	timer = setInterval(animate, interval);
@@ -33,9 +38,32 @@ function animate()
 	//Erase the Screen
 	context.clearRect(0,0,canvas.width,canvas.height);	
 	
-	//Move the Player
-
-	
+	//paddle collision
+	//top
+	if(ball.hitTestObject(player1))
+	{
+		if(ball.y < player1.y - player1.height/6)
+		{
+			ball.vx=-6;
+			ball.vy=-6;
+		}
+		
+		
+	}
+	//bottom
+	if(ball.hitTestObject(player1))
+	{
+		if(ball.y > player1.y)
+		{
+			ball.vx= -6
+			ball.vy = 6
+		}
+	}
+	//middle
+	if(ball.hitTestObject(player1))
+	{
+		ball.vx= -ball.vx + 6;	
+	}
 	//Update the Screen
 	
 	
