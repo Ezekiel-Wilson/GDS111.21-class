@@ -65,11 +65,15 @@ function animate()
 		ball.vx= -ball.vx + 6;	
 	}
 	//Update the Screen
+	if(ball.x < 0 + ball.width/2)
+	{ ball.x = canvas.width/2}
+		
 	
+
 	
 	if(s)
 	{
-		player1.y+=10;
+		player1.y+=10; 	
 	}
 	if(w)
 	{
