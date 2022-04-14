@@ -8,6 +8,11 @@ var prevY;
 var prevX;
 var playerY;
 var player2;
+var p1wins;
+var p2wins;
+
+
+
 
 
 
@@ -16,6 +21,7 @@ var player2;
 	//Set Up the Canvas
 	canvas = document.getElementById("canvas");
 	context = canvas.getContext("2d");	
+	
 	
 
 	
@@ -46,6 +52,8 @@ function animate()
 {
 	//Erase the Screen
 	context.clearRect(0,0,canvas.width,canvas.height);	
+
+
 	
 	//paddle collision
 	//top
@@ -143,11 +151,13 @@ function animate()
 		{	
 		ball.x = canvas.width/2
 		ball.color="orange"
+		p1wins = +1
 		}
 		if(ball.x < 0 + ball.height/2)
 		{	
 		ball.vx = -ball.vx;
 		ball.color="pink"
+		p2wins = +2
 		}
 		if(ball.y > canvas.height - ball.width/2)
 		{
@@ -163,7 +173,9 @@ function animate()
 			
 			
 			//---------------------------------------------------
-			
+			context.font = "20px Arial";
+			context.fillText("Player One || Player Two" , 400, 25);
+			context.fillText("Score",p1wins,p2wins, 400,35);
 			ball.drawCircle();
 			player1.drawRect();
 			player2.drawRect()
