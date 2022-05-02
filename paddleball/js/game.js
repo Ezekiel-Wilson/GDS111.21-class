@@ -34,6 +34,7 @@ var vx = 0;
 	//Instantiate the Player
 	
 	var player1 = new GameObject();
+	player1.color="cyan"
 	player1.x = canvas.width/2;
 	player1.y = 550;
 	player1.width = 250;
@@ -46,13 +47,14 @@ var vx = 0;
 
 
 	
-	//------Declare the Player's speed on the x and y axis------
+	//------Declare the Player's speed on the x and y axis------ 
+	ball.color="magenta";
 	ball.vx =5;
 	ball.vy = 0
 	gravity=1;
 	ball.width = 80;
 	ball.height = 80;
-	ball.force = 2;	
+	ball.force = 5;	
 	
 	//Set the Animation Timer
 	timer = setInterval(animate, interval);
@@ -64,8 +66,8 @@ function animate()
 	
 	//Erase the Screen
 	context.clearRect(0,0,canvas.width,canvas.height);	
-	ball.vx*frictionX;
-	ball.vy*frictionY;
+	ball.vx*=frictionX;
+	ball.vy*=frictionY;
 	ball.vy= ball.vy+gravity
 	ball.move();
 
@@ -131,14 +133,16 @@ function animate()
 	if(player1.x > canvas.width - player1.width/2)
 	{
 		player1.x = canvas.width - player1.width/2
-		
-		player1.color="yellow"
+		player1.vx = 0
+		player1.color="cyan"
 	}
 	if(player1.x < 0 + player1.width/2)
 	{
 	player1.x = 0 + player1.width/2
-		player1.color="cyan"}
-			
+		player1.color="cyan"
+		player1.vx=0
+	}
+		
 	
 	
 	
@@ -160,7 +164,7 @@ function animate()
 		{	
 		ball.x = ball.height
 		ball.vx = -ball.vx;
-		ball.color="pink"
+		
 		
 		
 		}
@@ -168,20 +172,22 @@ function animate()
 		{
 			ball.y = canvas.height - ball.width/2
 			ball.vy = -ball.vy;
-		ball.color="yellow"
+		
 		p1wins=0
 		}
 		if(ball.y < 0 + ball.height/2)
 		{ball.vy = -ball.vy
-		ball.color="lime"}
+		}
 			
 			
 			
 			
 			//---------------------------------------------------
-			context.font = "20px Arial";
-			context.fillText("Player One || Player Two" , 400, 25);
-			context.fillText(p1wins, 497.5,59);
+			context.font = "16px Arial black";
+			context.fillStyle = "#555555"
+			context.fillText("Score "+  p1wins, 80, 25);
+			
+			
 			ball.drawCircle();
 			player1.drawRect();
 			
