@@ -9,7 +9,12 @@ var prevX;
 var playerY;
 var player2;
 var p1wins=0;
-var gravity = 1
+var gravity = 1;
+var frictionX =.97;
+var frictionY =.97;
+var ax = 1;
+var force = 1;
+var vx = 0;
 
 
 
@@ -33,8 +38,11 @@ var gravity = 1
 	player1.y = 550;
 	player1.width = 250;
 	player1.height = 40;
+
 	
 	ball = new GameObject();
+	
+
 
 
 	
@@ -43,7 +51,8 @@ var gravity = 1
 	ball.vy = 0
 	gravity=1;
 	ball.width = 80;
-	ball.height = 80;	
+	ball.height = 80;
+	ball.force = 2;	
 	
 	//Set the Animation Timer
 	timer = setInterval(animate, interval);
@@ -51,10 +60,14 @@ var gravity = 1
 function animate()
 {
 	
-	ball.vy= +ball.vy+gravity
+	
 	
 	//Erase the Screen
 	context.clearRect(0,0,canvas.width,canvas.height);	
+	ball.vx*frictionX;
+	ball.vy*frictionY;
+	ball.vy= ball.vy+gravity
+	ball.move();
 
 
 	
@@ -62,24 +75,39 @@ function animate()
 	//top
 	if(ball.hitTestObject(player1))
 	{
-		p1wins=+1;
-		ball.x = player1.x + player1.height/2 + ball.width/2
-		ball.vy= -ball.vy;
-		if(ball.y < player1.x - player1.height/6)
+		p1wins+=1
+		ball.y = player1.y - player1.height/2 - ball.height/2
+		ball.vy=-35;
+		if(ball.x > player1.x + player1.width/6)
 		{
 			
-			ball.vx=-6;
+			ball.vx=ball.force;
+			
 		}
-		if(ball.x > player1.x)
+		if(ball.x < player1.x - player1.width/6)
 		{
-			ball.vx= 6;
+			
+			ball.vx = -ball.force;
+			
+		}
+	
+		if(ball.x > player1.x + player1.width/3)
+		{
+			ball.vx=ball.force*5
+			
+			
+		}
+		if(ball.x < player1.x - player1.width/3)
+		{
+			
+			ball.vx = -ball.force*5
 			
 			
 		}
 	}
 	//Update the Screen
-	if(ball.x < 0 + ball.width/2)
-	{ ball.x = canvas.width/2}
+
+	
 	
 	//top
 	
@@ -90,23 +118,25 @@ function animate()
 	
 	if(d)
 	{
-		player1.x+=10; 	
+	player1.vx += player1.ax * player1.force;
 	}
 	if(a)
 	{
-		player1.x-=10;
-	}
+	player1.vx += player1.ax * -player1.force;
+	}	
+	player1.vx*= frictionX
+	player1.x += player1.vx
+
 	
-	
-	if(player1.x > canvas.width - player1.width)
+	if(player1.x > canvas.width - player1.width/2)
 	{
-		player1.x = canvas.width - player1.width
+		player1.x = canvas.width - player1.width/2
 		
 		player1.color="yellow"
 	}
-	if(player1.y < 0 + player1.height/2)
+	if(player1.x < 0 + player1.width/2)
 	{
-	player1.y = 0 + player1.height/2
+	player1.x = 0 + player1.width/2
 		player1.color="cyan"}
 			
 	
@@ -114,7 +144,7 @@ function animate()
 	
 		
 		//----Movement Using the Player's move() function----
-		ball.move();
+		
 		//---------------------------------------------------
 		
 		//--------------Bounce of Right----------------------

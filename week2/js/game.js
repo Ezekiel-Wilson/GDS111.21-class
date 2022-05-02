@@ -10,7 +10,7 @@ var playerY;
 var player2;
 var p1wins=0;
 var p2wins=0;
-
+var img=document.getElementById("ric");
 
 
 
@@ -180,6 +180,9 @@ function animate()
 			player1.drawRect();
 			player2.drawRect()
 			context.save();
+
+			
+
 		
 			context.beginPath();
 			context.moveTo(512,0);
@@ -188,6 +191,9 @@ function animate()
 			context.lineWidth = 2;
 			context.stroke();
 			context.restore();
+			
+			context.drawImage(img,ball.x-ball.width/2,ball.y-ball.height/2,ball.width,ball.height);
+			
 
 		}
 
