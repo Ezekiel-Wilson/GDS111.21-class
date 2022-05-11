@@ -8,6 +8,8 @@ var player;
 
 
 
+
+
 	canvas = document.getElementById("canvas");
 	context = canvas.getContext("2d");	
 
@@ -31,6 +33,8 @@ var player;
 	interval = 1000/60;
 	timer = setInterval(animate, interval);
 
+
+
 function animate()
 {
 	
@@ -50,7 +54,12 @@ function animate()
 	{
 		player.vx += player.ax * player.force;
 	}
-
+	//if(d&&f)
+	//{
+	//	dash = true;
+	//}
+	
+	
 	player.vx *= fX;
 	player.vy *= fY;
 	
@@ -100,7 +109,6 @@ function animate()
 	if(player.canJump == true && d == true && sh == true)
 	{player.vx += player.ax * player.force*2;}
 	
-
 	
 	if(player.hitTestObject(goal))
 	{
@@ -117,7 +125,7 @@ function animate()
 	{
 		gravity=.2;
 	}
-	
+
 	
 	platform0.drawRect();
 
