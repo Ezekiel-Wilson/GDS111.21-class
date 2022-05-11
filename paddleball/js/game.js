@@ -16,23 +16,9 @@ var ax = 1;
 var force = 1;
 var vx = 0;
 
-
-
-
-
-
-
-
-
-	//Set Up the Canvas
 	canvas = document.getElementById("canvas");
 	context = canvas.getContext("2d");	
-	
-	
 
-	
-	//Instantiate the Player
-	
 	var player1 = new GameObject();
 	player1.color="cyan"
 	player1.x = canvas.width/2;
@@ -40,14 +26,8 @@ var vx = 0;
 	player1.width = 250;
 	player1.height = 40;
 
-	
 	ball = new GameObject();
-	
 
-
-
-	
-	//------Declare the Player's speed on the x and y axis------ 
 	ball.color="magenta";
 	ball.vx =5;
 	ball.vy = 0
@@ -55,26 +35,18 @@ var vx = 0;
 	ball.width = 80;
 	ball.height = 80;
 	ball.force = 5;	
-	
-	//Set the Animation Timer
+
 	timer = setInterval(animate, interval);
 
 function animate()
 {
-	
-	
-	
-	//Erase the Screen
+
 	context.clearRect(0,0,canvas.width,canvas.height);	
 	ball.vx*=frictionX;
 	ball.vy*=frictionY;
 	ball.vy= ball.vy+gravity
 	ball.move();
 
-
-	
-	//paddle collision
-	//top
 	if(ball.hitTestObject(player1))
 	{
 		p1wins+=1
@@ -107,17 +79,7 @@ function animate()
 			
 		}
 	}
-	//Update the Screen
 
-	
-	
-	//top
-	
-	
-	
-
-
-	
 	if(d)
 	{
 	player1.vx += player1.ax * player1.force;
@@ -142,16 +104,7 @@ function animate()
 		player1.color="cyan"
 		player1.vx=0
 	}
-		
-	
-	
-	
-		
-		//----Movement Using the Player's move() function----
-		
-		//---------------------------------------------------
-		
-		//--------------Bounce of Right----------------------
+
 		if(ball.x > canvas.width - ball.height/2)
 		{	
 		ball.x = canvas.width - ball.width/2 
@@ -164,9 +117,7 @@ function animate()
 		{	
 		ball.x = ball.height
 		ball.vx = -ball.vx;
-		
-		
-		
+
 		}
 		if(ball.y > canvas.height - ball.width/2)
 		{
@@ -178,11 +129,7 @@ function animate()
 		if(ball.y < 0 + ball.height/2)
 		{ball.vy = -ball.vy
 		}
-			
-			
-			
-			
-			//---------------------------------------------------
+
 			context.font = "16px Arial black";
 			context.fillStyle = "#555555"
 			context.fillText("Score "+  p1wins, 80, 25);
@@ -200,8 +147,6 @@ function animate()
 			context.lineWidth = 2;
 			context.stroke();
 			context.restore();
-
-			
 
 		}
 

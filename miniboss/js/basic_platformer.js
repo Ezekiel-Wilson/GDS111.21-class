@@ -95,7 +95,10 @@ function animate()
 		gravity= 1
 		
 	}
-	
+	if(player.canJump == true && a == true && sh == true)
+	{player.vx += -player.ax * player.force*2;}
+	if(player.canJump == true && d == true && sh == true)
+	{player.vx += player.ax * player.force*2;}
 	
 
 	
