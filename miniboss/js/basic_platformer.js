@@ -59,7 +59,7 @@ function animate()
 	}
 	if(d&&f&&dash==false)
 	{
-		player.vx += 5;
+		player.vx += 40;
 		dash=true;
 		clearTimeout(dash1);
 		dash1 = setTimeout (function()
