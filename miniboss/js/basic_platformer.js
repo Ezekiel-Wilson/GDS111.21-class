@@ -67,6 +67,16 @@ function animate()
 			dash= false;
 		}, 15000);
 	}
+	if(a&&f&&dash==false)
+	{
+		player.vx -= 40;
+		dash=true;
+		clearTimeout(dash1);
+		dash1 = setTimeout (function()
+		{
+			dash= false;
+		}, 15000);
+	}
 	
 	
 	
