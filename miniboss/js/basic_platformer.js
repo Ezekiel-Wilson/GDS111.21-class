@@ -5,6 +5,9 @@ var context;
 var timer;
 var interval;
 var player;
+var dash = false;
+var dash1;
+
 
 
 
@@ -54,10 +57,17 @@ function animate()
 	{
 		player.vx += player.ax * player.force;
 	}
-	//if(d&&f)
-	//{
-	//	dash = true;
-	//}
+	if(d&&f&&dash==false)
+	{
+		player.vx += 5;
+		dash=true;
+		clearTimeout(dash1);
+		dash1 = setTimeout (function()
+		{
+			dash= false;
+		}, 15000);
+	}
+	
 	
 	
 	player.vx *= fX;
